@@ -55,6 +55,13 @@ int main() {
     for(it = v1.begin(); it != v1.end(); it++){
         cout << *it << " ";
     }cout << endl;
+    cout << "==============================\n";
 
+
+    int user = 0;
+    cin >> user;
+
+    int amount = count_if(v1.begin(), v1.end(), [user](int a){ return a == user;});
+    cout << "Amount : " << amount << endl;
     return 0;
 }
