@@ -45,7 +45,6 @@ public:
     {
         return size;
     }
-
     void push_back(Type item)	// додавання елемента item у кінець масиву
     {
         size++;
@@ -60,6 +59,28 @@ public:
         arr = tmp;
     }
 
+    Type& operator[](int number){
+        return arr[number];
+    }
+
+    Type find_max()const // пошук елемента з максимальним значенням
+    {
+        Type max = arr[0];
+        for (int i = 0; i < size; ++i) {
+            if(arr[i] > max)
+                max = arr[i];
+        }
+        return max;
+    }
+    Type find_min()const // пошук елемента з мінімальним значенням
+    {
+        Type min = arr[0];
+        for (int i = 0; i < size; ++i) {
+            if(arr[i] < min)
+                min = arr[i];
+        }
+        return min;
+    }
 
 };
 
