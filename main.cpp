@@ -1,7 +1,17 @@
-#include <iostream>
+#include "Vector.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Vector<int> a; //size = 0
+    Vector<int> b(3, 8); //[8, 8, 8]
+
+    Vector<char> c(4, 'a');
+
+
+    a.showInfo();
+    b.showInfo();
+    c.showInfo();
+
+
 
     return 0;
 }
