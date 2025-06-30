@@ -18,7 +18,6 @@ public:
         arr = nullptr;
         size = 0;
     }
-
     Vector(int _size, Type value){ //_size = 4, value = 7.8
         size = _size;
         arr = new Type[size]; // [0, 0, 0, 0]
@@ -27,7 +26,6 @@ public:
             arr[i] = value; //[7.8, 7.8, 7.8, 7.8]
         }
     }
-
     ~Vector(){
         if( size > 0) delete[] arr;
         arr = nullptr;
@@ -43,6 +41,26 @@ public:
             cout << endl;
         }
     }
+    int getSize() const	// повертає розмірність масиву
+    {
+        return size;
+    }
+
+    void push_back(Type item)	// додавання елемента item у кінець масиву
+    {
+        size++;
+        Type* tmp = new Type[size];
+
+        for (int i = 0; i < size - 1; ++i) {
+            tmp[i] =arr[i];
+        }
+
+        tmp[size - 1] = item;
+        if(arr != nullptr) delete[] arr;
+        arr = tmp;
+    }
+
+
 };
 
 
